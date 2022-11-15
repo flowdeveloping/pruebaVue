@@ -7,6 +7,7 @@ const app = new Vue({
     data:{
         fondo: 'bg-info',
         color: false,
+        contador: 0,
         titulo: 'Hola Mundo, Interactuando con Vue.js',
         paises: [
             {nombre: 'Argentina', continente: 'Sudamerica', poblacion:48005156},
@@ -32,6 +33,13 @@ const app = new Vue({
                 this.total = this.total + pais.poblacion;
             }
             return this.total;
+        },
+        colores(){
+            return{
+                'bg-success' : this.contador <= 10,
+                'bg-warning' : this.contador > 10 && this.contador < 20,
+                'bg-danger' : this.contador >= 20
+            }
         }
     }
 })
